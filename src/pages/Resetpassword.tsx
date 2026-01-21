@@ -1,10 +1,14 @@
 import React from "react";
 import { baseUrl } from "../baseUrl";
+import { useNavigate } from "react-router-dom";
+
 
 const sendOtpUrl = `${baseUrl}/otp/otp`;
 const changePasswordUrl = `${baseUrl}/otp/verify-otp`;
 
 const ProfileCard: React.FC = () => {
+  const navigate = useNavigate();
+
   const [email, setEmail] = React.useState("");
   const [otp, setOtp] = React.useState("");
   const [newPassword, setNewPassword] = React.useState("");
@@ -69,6 +73,10 @@ const ProfileCard: React.FC = () => {
 
       setSuccessMsg("Password changed successfully!");
       console.log(data);
+
+      setTimeout(() => {
+        navigate("/login");
+      }, 2000);
 
     } catch (error) {
       console.log("Error changing password:", error);

@@ -87,7 +87,7 @@ const Navbar: React.FC = () => {
             <img src="../../public/logo.png" alt="Logo" className="w-10 h-10 rounded-full flex items-center justify-center" />
           </div>
           <h1 className="font-bold text-2xl text-white tracking-tight hidden sm:block">
-            PulseNet    
+            PulseNet
           </h1>
         </Link>
 
@@ -111,7 +111,6 @@ const Navbar: React.FC = () => {
                     className="w-64 bg-white/90 backdrop-blur-sm border-2 border-white/50 rounded-full px-5 py-2.5 pl-11 text-gray-800 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-amber-400 focus:border-transparent transition-all duration-300 shadow-md"
                     onChange={(e) => setSearchText(e.target.value)}
                     onFocus={() => searchText && setShowDropdown(true)}
-                    onBlur={() => setTimeout(() => setShowDropdown(false), 200)}
                   />
                   <svg
                     className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-500"
@@ -156,15 +155,15 @@ const Navbar: React.FC = () => {
                   </div>
                 )}
               </div>
-                {user && (
-                  <div className="relative">
-                    <img
-                      src={localStorage.getItem("profilePic") || ""}
-                      className="w-11 h-11 rounded-full object-cover ring-2 ring-red-100"
-                    />  
-                    <div className="absolute -bottom-0.5 -right-0.5 w-3 h-3 bg-green-500 rounded-full border-2 border-white"></div>
-                  </div>
-                )}
+              {user && (
+                <div className="relative">
+                  <img
+                    src={localStorage.getItem("profilePic") || ""}
+                    className="w-11 h-11 rounded-full object-cover ring-2 ring-red-100"
+                  />
+                  <div className="absolute -bottom-0.5 -right-0.5 w-3 h-3 bg-green-500 rounded-full border-2 border-white"></div>
+                </div>
+              )}
               {/* Navigation Icons */}
               <div className="flex items-center gap-4">
                 {/* Notification Icon */}
@@ -335,22 +334,20 @@ const LoginPopup: React.FC<LoginPopupProps> = ({ onClose, setUser }) => {
           <div className="flex bg-gray-100 rounded-full p-1 mb-4">
             <button
               onClick={() => setActiveTab("login")}
-              className={`flex-1 py-2 px-4 rounded-full text-sm font-semibold transition-all duration-300 ${
-                activeTab === "login"
+              className={`flex-1 py-2 px-4 rounded-full text-sm font-semibold transition-all duration-300 ${activeTab === "login"
                   ? "bg-linear-to-r from-red-600 to-rose-500 text-white shadow-md"
                   : "text-gray-600 hover:text-gray-800"
-              }`}
+                }`}
             >
               Login
             </button>
 
             <button
               onClick={() => setActiveTab("signup")}
-              className={`flex-1 py-2 px-4 rounded-full text-sm font-semibold transition-all duration-300 ${
-                activeTab === "signup"
+              className={`flex-1 py-2 px-4 rounded-full text-sm font-semibold transition-all duration-300 ${activeTab === "signup"
                   ? "bg-linear-to-r from-red-600 to-rose-500 text-white shadow-md"
                   : "text-gray-600 hover:text-gray-800"
-              }`}
+                }`}
             >
               Sign Up
             </button>

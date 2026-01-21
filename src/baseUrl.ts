@@ -1,1 +1,2 @@
-export const baseUrl = "https://social-media-backend-st-g29.onrender.com/api";
+export const baseUrl =
+  "https://suretrustg29fsd-smp-backend-yash.onrender.com/api";
